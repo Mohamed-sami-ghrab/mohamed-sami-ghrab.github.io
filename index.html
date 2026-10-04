@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohamed Sami Ghrab</title>
+  <meta name="description" content="Mohamed Sami Ghrab, Master's student in Data Science at EPFL and Research Engineer at the LiGHT Lab. Experience, projects and CV.">
+  <meta name="author" content="Mohamed Sami Ghrab">
+  <meta property="og:title" content="Mohamed Sami Ghrab">
+  <meta property="og:description" content="Master's student in Data Science at EPFL and Research Engineer at the LiGHT Lab.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="assets/img/profile.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231B2A4A'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' fill='%23ffffff' text-anchor='middle'%3EMG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1B2A4A;
+      --text: #2E3440;
+      --muted: #5F6878;
+      --line: #D9DEE6;
+      --bg: #FFFFFF;
+      --tint: #F6F8FB;
+      --link: #1F5FBF;
+      --maxw: 50rem;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "Source Sans 3", -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #E8ECF3;
+        --text: #CDD3DE;
+        --muted: #949CAB;
+        --line: #2C3444;
+        --bg: #12161E;
+        --tint: #181D27;
+        --link: #8AB4F8;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-padding-top: 4.5rem; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: var(--sans); font-size: 1.0625rem; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    :focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    .skip { position: absolute; left: -999px; }
+    .skip:focus { left: 1rem; top: 1rem; z-index: 100; background: var(--bg); padding: .4rem .8rem; }
+
+    /* Navigation */
+    .nav { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 3.5rem; }
+    .nav .brand { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--ink); white-space: nowrap; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 1.4rem; list-style: none; margin: 0; padding: 0; font-size: .95rem; }
+    .nav ul a { color: var(--muted); }
+    .nav ul a:hover { color: var(--ink); text-decoration: none; }
+    @media (max-width: 720px) { .nav ul li:not(.keep) { display: none; } }
+
+    /* Header */
+    .intro { padding: 3.5rem 0 2.5rem; }
+    .intro .wrap { display: grid; grid-template-columns: 11rem 1fr; gap: 2.5rem; align-items: center; }
+    .photo { position: relative; width: 11rem; height: 11rem; border-radius: 50%; overflow: hidden; background: var(--tint); border: 1px solid var(--line); }
+    .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .photo .initials { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--serif); font-size: 2.6rem; color: var(--muted); }
+    .intro h1 { font-family: var(--serif); font-weight: 600; font-size: 2.35rem; line-height: 1.15; color: var(--ink); margin: .2rem 0 .4rem; letter-spacing: -0.01em; }
+    .intro .title { font-size: 1.1rem; color: var(--ink); margin: 0 0 1rem; }
+    .details { list-style: none; padding: 0; margin: 0 0 1.4rem; display: flex; flex-wrap: wrap; gap: .25rem 1.4rem; font-size: .98rem; color: var(--muted); }
+    .details li { white-space: nowrap; }
+    .cta { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .btn {
+      display: inline-block; padding: .5rem 1rem; border-radius: 4px; font-weight: 600; font-size: .95rem;
+      border: 1px solid var(--ink); color: var(--ink); background: transparent; white-space: nowrap;
+    }
+    .btn:hover { text-decoration: none; background: var(--tint); }
+    .btn.primary { background: var(--ink); color: var(--bg); }
+    .btn.primary:hover { opacity: .9; background: var(--ink); }
+    @media (max-width: 600px) {
+      .intro { padding: 2.25rem 0 1.5rem; }
+      .intro .wrap { grid-template-columns: 1fr; gap: 1.25rem; }
+      .photo { width: 8rem; height: 8rem; }
+      .intro h1 { font-size: 2rem; }
+    }
+
+    /* Sections */
+    section { padding: 2rem 0 1.5rem; }
+    h2 {
+      font-family: var(--serif); font-weight: 600; font-size: 1.4rem; color: var(--ink);
+      margin: 0 0 1.25rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line);
+    }
+    p { margin: 0 0 1rem; }
+    .about p { max-width: 66ch; }
+
+    /* Entries */
+    .entry { margin-bottom: 1.9rem; }
+    .entry:last-child { margin-bottom: .5rem; }
+    .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+    .entry h3 { font-size: 1.08rem; font-weight: 700; color: var(--ink); margin: 0; line-height: 1.4; }
+    .entry .date { color: var(--muted); font-size: .95rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .entry .sub { font-style: italic; color: var(--muted); margin: .1rem 0 .55rem; }
+    .entry ul { margin: 0 0 .5rem; padding-left: 1.2rem; }
+    .entry li { margin-bottom: .3rem; }
+    .entry .tools { font-size: .93rem; color: var(--muted); margin: 0; }
+    .entry .tools b { font-weight: 600; color: var(--text); }
+    @media (max-width: 600px) {
+      .entry-head { flex-direction: column; gap: 0; }
+    }
+
+    .areas { columns: 2; column-gap: 2rem; margin: .25rem 0 0; padding-left: 1.2rem; }
+    .areas li { break-inside: avoid; margin-bottom: .2rem; }
+    @media (max-width: 600px) { .areas { columns: 1; } }
+
+    /* Skills */
+    .skills { margin: 0; display: grid; grid-template-columns: 11rem 1fr; gap: .6rem 1.5rem; }
+    .skills dt { font-weight: 600; color: var(--ink); }
+    .skills dd { margin: 0; }
+    @media (max-width: 600px) { .skills { grid-template-columns: 1fr; gap: .1rem; } .skills dd { margin-bottom: .7rem; } }
+
+    /* CV */
+    .cv-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; }
+    .cv-bar p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .cv-frame { border: 1px solid var(--line); background: var(--tint); }
+    .cv-frame object { display: block; width: 100%; height: min(85vh, 1150px); border: 0; }
+    .cv-fallback { display: block; padding: 1rem; color: var(--muted); font-size: .95rem; text-align: center; }
+    .cv-fallback img { width: 100%; height: auto; background: #fff; border: 1px solid var(--line); margin-bottom: .75rem; }
+    @media (max-width: 720px) { .cv-frame object { display: none; } }
+    @media (min-width: 721px) { .cv-frame .cv-mobile { display: none; } }
+
+    /* Contact */
+    .contact dl { margin: 0; display: grid; grid-template-columns: 6rem 1fr; gap: .4rem 1.5rem; }
+    .contact dt { color: var(--muted); }
+    .contact dd { margin: 0; overflow-wrap: anywhere; }
+
+    footer { margin-top: 2.5rem; border-top: 1px solid var(--line); padding: 1.25rem 0 2rem; font-size: .88rem; color: var(--muted); }
+
+    @media print {
+      .nav, .cta, #cv, .skip { display: none !important; }
+      body { font-size: 11pt; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="#top">Mohamed Sami Ghrab</a>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li class="keep"><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="intro" id="top">
+      <div class="wrap">
+        <div class="photo">
+          <!-- Profile photo: replace assets/img/profile.jpg (square image, at least 400×400 px) -->
+          <img src="assets/img/profile.jpg" alt="Mohamed Sami Ghrab" width="400" height="400" onerror="this.remove()">
+          <span class="initials" aria-hidden="true">MG</span>
+        </div>
+        <div>
+          <h1>Mohamed Sami Ghrab</h1>
+          <p class="title">Master's student in Data Science, EPFL<br>Research Engineer, LiGHT Lab</p>
+          <ul class="details">
+            <li>Lausanne, Switzerland</li>
+            <li><a href="mailto:ghrab3355@gmail.com">ghrab3355@gmail.com</a></li>
+            <li><a href="tel:+41783349179">+41 78 334 91 79</a></li>
+            <li><a href="https://www.linkedin.com/in/mohamed-sami-ghrab" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/mohamed-sami-ghrab" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+          <div class="cta">
+            <a class="btn primary" href="#cv">View CV</a>
+            <a class="btn" href="assets/cv/Mohamed_Sami_Ghrab_CV.pdf" download>Download CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap">
+
+      <section class="about" id="about" aria-labelledby="about-h">
+        <h2 id="about-h">About</h2>
+        <p>I am a Master's student in Data Science at EPFL and a Research Engineer at the LiGHT Lab, where I work on clinical large language models: supervised fine-tuning, preference tuning, and the analysis of how training changes a model's internal representations.</p>
+        <p>I hold a Bachelor's in Communication Systems from EPFL. My coursework and projects cover machine learning, NLP, foundation models, large-scale data and data visualization, and I have built LLM-based applications, deep learning models for computer vision and interactive data analyses.</p>
+        <p>I am interested in AI engineering and data science roles where models have to work reliably on real data and for real users.</p>
+      </section>
+
+      <section id="experience" aria-labelledby="exp-h">
+        <h2 id="exp-h">Experience</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Research Engineer, Clinical LLM Fine-tuning &amp; Representation Analysis</h3>
+            <span class="date">Feb 2026 – present</span>
+          </div>
+          <p class="sub">LiGHT Lab, EPFL, Lausanne</p>
+          <ul>
+            <li>Fine-tuned Qwen3-32B on clinical Q&amp;A data using Supervised Fine-Tuning (SFT) and analyzed the effect of subsequent preference tuning (DPO / Offset DPO) on internal model representations.</li>
+            <li>Built an end-to-end hidden-state extraction and linear probing pipeline across 8 model checkpoints on a 4×A100 HPC cluster.</li>
+            <li>Ran cosine similarity, PCA geometry and logistic probe classifiers on paired chosen/rejected representations across 8 transformer layers.</li>
+            <li>Key finding: preference tuning consistently improves clinical output quality (about +13% Jaccard over the base model) without reorganizing the internal latent geometry.</li>
+          </ul>
+          <p class="tools"><b>Tools:</b> PyTorch, scikit-learn, NumPy, Matplotlib, HPC cluster (4×A100)</p>
+        </div>
+      </section>
+
+      <section id="education" aria-labelledby="edu-h">
+        <h2 id="edu-h">Education</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Master in Data Science</h3>
+            <span class="date">Ongoing</span>
+          </div>
+          <p class="sub">EPFL, Swiss Federal Institute of Technology Lausanne</p>
+          <p style="margin-bottom:.2rem">Areas of expertise:</p>
+          <ul class="areas">
+            <li>Machine Learning</li>
+            <li>Foundation Models &amp; GenAI</li>
+            <li>Natural Language Processing</li>
+            <li>Optimization for Machine Learning</li>
+            <li>Reinforcement Learning</li>
+            <li>Large-scale Data</li>
+            <li>Database Systems</li>
+            <li>Data Visualization</li>
+            <li>Computer Security</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Bachelor in Communication Systems</h3>
+            <span class="date">2024</span>
+          </div>
+          <p class="sub">EPFL, Swiss Federal Institute of Technology Lausanne</p>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="proj-h">
+        <h2 id="proj-h">Projects</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>When Anger Speaks Fluently: an interactive data story</h3>
+            <span class="date">Jan 2026</span>
+          </div>
+          <p class="sub">CS-401 Applied Data Analysis, EPFL</p>
+          <ul>
+            <li>Analyzed over 1M Reddit interactions to study language style, sentiment and community behavior.</li>
+            <li>Developed and deployed the website with React, TypeScript, Jekyll, Tailwind CSS and GitHub Pages.</li>
+            <li>Integrated interactive visualizations including PCA clustering, sentiment analysis and subreddit interaction networks.</li>
+          </ul>
+          <p class="tools"><b>Website:</b> <a href="https://mohamed-sami-ghrab.github.io/website_ada/" target="_blank" rel="noopener">mohamed-sami-ghrab.github.io/website_ada</a></p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Fine-tuned Aerial Image Segmentation</h3>
+            <span class="date">Dec 2025</span>
+          </div>
+          <p class="sub">Course project, EPFL</p>
+          <ul>
+            <li>Developed and evaluated deep learning models for semantic segmentation of aerial images in Python and PyTorch.</li>
+            <li>Implemented and fine-tuned U-Net (ResNet18), SegFormer (mit_b2), DeepLab and diffusion-based segmentation models.</li>
+            <li>Built preprocessing and augmentation pipelines with OpenCV and Albumentations; optimized with BCE + Dice loss and evaluated with F1 and Dice scores.</li>
+          </ul>
+          <p class="tools"><b>Tools:</b> PyTorch, OpenCV, Albumentations</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Picky: AI Emotional Recommendation Platform</h3>
+            <span class="date">Dec 2025</span>
+          </div>
+          <p class="sub">Team project</p>
+          <ul>
+            <li>Designed and implemented an LLM-powered emotion detection pipeline (18 emotion categories) using the OpenRouter API.</li>
+            <li>Built a Telegram bot recommending movies, music and books based on users' emotional states.</li>
+            <li>Created Grafana dashboards to track satisfaction, retention, decision time and emotional-fit KPIs.</li>
+          </ul>
+          <p class="tools"><b>Tools:</b> Python, OpenRouter API, Supabase, Telegram Bot API, Grafana</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Predictive Modeling for Early Heart Attack Detection</h3>
+            <span class="date">Nov 2024</span>
+          </div>
+          <p class="sub">Machine learning project, EPFL</p>
+          <ul>
+            <li>Developed a regularized logistic regression model from scratch in NumPy on 320,000 records with 350 features from the BRFSS 2015 dataset.</li>
+            <li>Preprocessed the data: cleaning, missing-value handling, standardization, class balancing and polynomial expansion.</li>
+            <li>Tuned hyperparameters with cross-validation; ranked in the top 5% on AIcrowd.</li>
+          </ul>
+          <p class="tools"><b>Tools:</b> Python, NumPy</p>
+        </div>
+      </section>
+
+
+      <section id="skills" aria-labelledby="skills-h">
+        <h2 id="skills-h">Skills</h2>
+        <dl class="skills">
+          <dt>Programming</dt>
+          <dd>Python, SQL, Scala, Java, C, R</dd>
+          <dt>Machine learning</dt>
+          <dd>PyTorch, scikit-learn, Statsmodels, NLTK, OpenCV</dd>
+          <dt>LLMs</dt>
+          <dd>Supervised fine-tuning, preference tuning (DPO), linear probing and representation analysis, LLM APIs</dd>
+          <dt>Data</dt>
+          <dd>Pandas, NumPy, PySpark, Matplotlib, Seaborn, Grafana</dd>
+          <dt>Web &amp; tools</dt>
+          <dd>React, TypeScript, Supabase, Git, GitHub Pages, HPC clusters</dd>
+          <dt>Languages</dt>
+          <dd>English, French, Arabic, German (basic)</dd>
+        </dl>
+      </section>
+
+      <section id="cv" aria-labelledby="cv-h">
+        <h2 id="cv-h">Curriculum Vitae</h2>
+        <div class="cv-bar">
+          <p>Last updated October 2026</p>
+          <div class="cta">
+            <a class="btn primary" href="assets/cv/Mohamed_Sami_Ghrab_CV.pdf" download>Download PDF</a>
+            <a class="btn" href="assets/cv/Mohamed_Sami_Ghrab_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          </div>
+        </div>
+        <div class="cv-frame">
+          <object data="assets/cv/Mohamed_Sami_Ghrab_CV.pdf#view=FitH" type="application/pdf" aria-label="CV of Mohamed Sami Ghrab">
+            <a class="cv-fallback" href="assets/cv/Mohamed_Sami_Ghrab_CV.pdf" target="_blank" rel="noopener">
+              <img src="assets/img/cv-preview.png" alt="CV of Mohamed Sami Ghrab">
+              Open the CV as PDF
+            </a>
+          </object>
+          <a class="cv-fallback cv-mobile" href="assets/cv/Mohamed_Sami_Ghrab_CV.pdf" target="_blank" rel="noopener">
+            <img src="assets/img/cv-preview.png" alt="CV of Mohamed Sami Ghrab">
+            Open the CV as PDF
+          </a>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <dl>
+          <dt>Email</dt><dd><a href="mailto:ghrab3355@gmail.com">ghrab3355@gmail.com</a></dd>
+          <dt>Phone</dt><dd><a href="tel:+41783349179">+41 78 334 91 79</a></dd>
+          <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/mohamed-sami-ghrab" target="_blank" rel="noopener">linkedin.com/in/mohamed-sami-ghrab</a></dd>
+          <dt>GitHub</dt><dd><a href="https://github.com/mohamed-sami-ghrab" target="_blank" rel="noopener">github.com/mohamed-sami-ghrab</a></dd>
+          <dt>Location</dt><dd>Lausanne, Switzerland</dd>
+        </dl>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Mohamed Sami Ghrab</div>
+  </footer>
+</body>
+</html>
