@@ -1,34 +1,29 @@
-# Mohamed Sami Ghrab · Portfolio
+# Mohamed Sami Ghrab - Portfolio
 
-Personal portfolio and CV, published with GitHub Pages.
+This is my personal portfolio website and online CV. It is a small static site hosted with GitHub Pages.
 
-## Publish on GitHub Pages
+The site is available at [mohamed-sami-ghrab.github.io](https://mohamed-sami-ghrab.github.io).
 
-1. On GitHub, create a new **public** repository named exactly `mohamed-sami-ghrab.github.io`.
-2. Upload everything in this folder (keep the folder structure: `index.html`, `assets/`, `.nojekyll`).
-3. Go to **Settings → Pages**, set **Source** to *Deploy from a branch*, branch `main`, folder `/ (root)`, and save.
-4. After a minute or two the site is live at **https://mohamed-sami-ghrab.github.io**.
+## Updating the site
 
-## Change the photo
+The page content and styles are in `index.html`. Images and CV files live in `assets/`.
 
-Replace `assets/img/profile.jpg` with your picture (square, at least 400×400 px, same file name). If the file is missing, the page shows your initials instead.
+To update the profile photo, replace `assets/img/profile.jpg` with a square image using the same filename. If there is no photo, the page falls back to my initials.
 
-## Update the CV
-
-Replace `assets/cv/Mohamed_Sami_Ghrab_CV.pdf` with the new PDF (same file name), then regenerate the preview image used on phones:
+To update the CV, replace `assets/cv/Mohamed_Sami_Ghrab_CV.pdf` and regenerate the preview image:
 
 ```bash
 pdftoppm -png -r 110 -singlefile assets/cv/Mohamed_Sami_Ghrab_CV.pdf assets/img/cv-preview
 ```
 
-Update the "Updated October 2026" line in the CV section of `index.html`.
+The current CV date is shown in the CV section of `index.html`.
 
-## Structure
+## Files
 
 ```
-index.html                     the whole site (HTML + CSS, no build step)
-assets/cv/…CV.pdf              downloadable / embedded CV
-assets/img/profile.jpg         portrait
-assets/img/cv-preview.png      CV preview for mobile browsers
-.nojekyll                      serve files as-is on GitHub Pages
+index.html                 page markup and styles
+assets/cv/                  downloadable CV
+assets/img/profile.jpg     profile photo
+assets/img/cv-preview.png  CV preview for mobile browsers
+.nojekyll                  keeps the site fully static on GitHub Pages
 ```
